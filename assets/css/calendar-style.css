@@ -1,0 +1,162 @@
+.calendar-container {
+  position:relative;
+  display: flex;
+  justify-content: center;
+  min-height:90vh;
+}
+.calendar-top-header{
+  /* background-image:url('../assets/images/asphalt-asymmetry-car-1090932.jpg'); */
+  background-repeat:no-repeat;
+  background-size:cover;
+  background-position:center;
+  height:40vh;
+  width:100%;
+  background:var(--flag-blue);
+}
+.calendar-top-header .calender-title{
+  width:100%;
+  height:100%;
+  margin: 0 auto;
+  padding: 4rem 0;
+  background:rgba(0,0,0,0.1);
+}
+
+.calendar-top-header .calender-title div{
+  width: 90%;
+  margin: 0 auto;
+}
+.calendar-top-header .calender-title h2,
+.calendar-top-header .calender-title p {
+  color:#f1f3f4;
+  text-transform:uppercase;
+  
+}
+
+.calender-wrapper {
+  position:absolute;
+  top:25vh;
+  width: 90%;
+  background: #fff;
+  /* border-radius: 10px;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12); */
+}
+
+.calender-wrapper .calendar-header {
+  display: flex;
+  align-items: center;
+  padding: 25px 30px 10px;
+  justify-content: space-between;
+  background:var(--flag-blue);
+}
+
+.calendar-month-tag {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+}
+
+.calendar-header .icons {
+  display: flex;
+}
+
+.calendar-header .icons span {
+  height: 38px;
+  width: 38px;
+  margin: 0 1px;
+  cursor: pointer;
+  color: #000;
+  text-align: center;
+  line-height: 38px;
+  font-size: 1.9rem;
+  user-select: none;
+  border-radius: 50%;
+}
+
+.icons span:last-child {
+  margin-right: -10px;
+}
+
+.calendar-header .icons span:hover {
+  background: #f2f2f2;
+}
+
+.calendar-header .current-date {
+  margin-left: 5px;
+}
+
+.calendar-header .current-date-mi {
+  font-size: 1.45rem;
+  font-weight: 500;
+}
+
+.calendar-header .current-date-mi::after {
+  content: ' - ';
+}
+
+.calendar-header .current-yyy {
+  font-size: 1.45rem;
+  font-weight: 500;
+  margin-left: 5px;
+}
+
+.calendar {
+  padding: 20px 0;
+}
+
+.calendar ul {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  text-align: center;
+}
+
+.calendar .days {
+  margin-bottom: 20px;
+}
+
+.calendar li {
+  color: #333;
+  width: calc(100% / 7);
+  font-size: 1.07rem;
+}
+
+.calendar .weeks li {
+  font-weight: 500;
+  cursor: default;
+}
+
+.calendar .days li {
+  z-index: 1;
+  cursor: pointer;
+  position: relative;
+  margin-top: 30px;
+}
+
+.days li.inactive {
+  color: #aaa;
+}
+
+.days li.active {
+  color: #fff;
+}
+
+.days li::before {
+  position: absolute;
+  content: "";
+  left: 50%;
+  top: 50%;
+  height: 40px;
+  width: 40px;
+  z-index: -1;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.days li.active::before {
+  background: var(--flag-blue);
+  /* background: #9B59B6; */
+}
+
+.days li:not(.active):hover::before {
+  background: #f2f2f2;
+}
